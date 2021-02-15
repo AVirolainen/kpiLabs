@@ -12,12 +12,29 @@ function getMinOfArray(numArray) {
 }
 
 const table = {}
+
+const minCoef = 1
+const maxCoef = 20
+
 const coefs = {
-    a0 : Math.round(getRandomInt(1, 20)),
-    a1 : Math.round(getRandomInt(1, 20)),
-    a2 : Math.round(getRandomInt(1, 20)),
-    a3 : Math.round(getRandomInt(1, 20))
+    a0 : Math.round(getRandomInt(minCoef, maxCoef)),
+    a1 : Math.round(getRandomInt(minCoef, maxCoef)),
+    a2 : Math.round(getRandomInt(minCoef, maxCoef)),
+    a3 : Math.round(getRandomInt(minCoef, maxCoef))
 }
+
+let keys = Object.keys(coefs);
+let max = coefs[keys[0]];
+let maxKey = keys[0]
+
+for (let i = 0; i < keys.length; i++) {
+    let value = coefs[keys[i]];
+    if (value > max){
+        max = value;
+        maxKey = keys[i]
+    }
+}
+console.log(`Максимальне значення ${maxKey} = ${max}`)
 
 const values = {
     x1 : [],
