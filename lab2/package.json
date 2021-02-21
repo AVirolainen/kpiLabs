@@ -1,0 +1,15 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "kpi_lab",
+  "main": "index.js",
+  "dependencies": {
+    "mathjs": "^9.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
