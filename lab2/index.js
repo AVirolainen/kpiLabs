@@ -71,9 +71,9 @@ const exp = () =>{
     }
     const deviation = ((2*((2*m)-2))/(m*(m-4)))**(1/2)
 
-    const Fuv1 = dispertion1/dispertion2
-    const Fuv2 = dispertion3/dispertion1
-    const Fuv3 = dispertion3/dispertion2
+    const Fuv1 = dispertion1 > dispertion2 ? dispertion1/dispertion2 : dispertion2/dispertion1
+    const Fuv2 = dispertion3 > dispertion1 ? dispertion3/dispertion1 : dispertion1/dispertion3
+    const Fuv3 = dispertion3 > dispertion2 ? dispertion3/dispertion2 : dispertion2/dispertion3
 
     const Ouv1 = ((m-2)/m)*Fuv1
     const Ouv2 = ((m-2)/m)*Fuv2
