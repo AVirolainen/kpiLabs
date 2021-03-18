@@ -260,6 +260,15 @@ else{
     b1 = new_values[1]==0 ? 0 : b1
     b2 = new_values[2]==0 ? 0 : b2
     b3 = new_values[3]==0 ? 0 : b3
+    
+    for (let i = 0; i<4; i++){
+        if(new_values[i]==0){
+            console.log(`b${i} = ${values[i]} - незначимий коефіцієнт`)
+        }
+        else{
+            console.log(`b${i} = ${values[i]} - значимий коефіцієнт`)
+        }
+    }
 
     let flags2 = []
     for (let j=0; j<4; j++){
