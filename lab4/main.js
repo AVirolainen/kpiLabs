@@ -68,10 +68,8 @@ const arraySum = (array)=>{
 
 console.table(table_planning)
 
-let flag = true
-
-while(flag) {
-    flag = false
+let flagNumber = 0
+for(let k=0; k<100; k++){
     for (let i = 0; i < 8; i++) {
         for (let j = 0; j < m; j++) {
             Object.values(table_planning)[i]["Y" + (j + 1)] = Math.round(getRandomInt(yiMin, yiMax))
@@ -238,7 +236,7 @@ while(flag) {
     const f1 = m-1
     const f2 = 8
 
-    const GtValues = {2: 5157, 3: 4377, 4: 3910, 5: 3595, 6: 3362, 7: 3185, 8: 3043, 9: 2926, 10: 2829, 16: 2462}
+    const GtValues = {2: 0.5157, 3: 0.4377, 4: 0.3910, 5: 0.3595, 6: 0.3362, 7: 0.3185, 8: 0.3043, 9: 0.2926, 10: 0.2829, 16: 0.2462}
     if (Gp>GtValues[f2]){
         console.log("Дисперсії в рядках не є однорідними,")
         flag = false
@@ -246,6 +244,8 @@ while(flag) {
     }
     else{
         console.log("Дисперсії в рядках є однорідними,")
+        flagNumber +=1
+        
         const sAvarage = Skv.reduce((a, b) => a + b, 0)/8
         const s2Beta = sAvarage/(8*m)
         const sBeta = s2Beta**(1/2)
@@ -329,7 +329,7 @@ while(flag) {
     }
 }
 
-
+console.log("Кількість однорідних дисперсій: " + flagNumber)
 
 
 
