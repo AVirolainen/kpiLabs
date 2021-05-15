@@ -205,5 +205,9 @@ coefficients = find_coefficients(natural_plan, y_arr)
 print_equation(coefficients)
 importance = student_criteria(m, N, y_arr, coefficients)
 d = len(list(filter(None, importance)))
-fisher_criteria(m, N, d, natural_plan, y_arr, coefficients, importance)
+if d == 3:
+    print("Кількість значимих коефіцієнтів дорівнює 3 - модель не є адекватною")
+else:
+    fisher_criteria(m, N, d, natural_plan, y_arr, coefficients, importance)
+
 
